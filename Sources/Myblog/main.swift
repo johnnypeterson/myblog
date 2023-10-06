@@ -22,4 +22,6 @@ struct Myblog: Website {
 }
 
 // This will generate your website using the built-in Foundation theme:
-try Myblog().publish(withTheme: .foundation)
+try Myblog().publish(using: [
+    .unwrap(.gitHub("johnnypeterson.github.io/myblog/", useSSH: true), PublishingStep.deploy)])
+    
